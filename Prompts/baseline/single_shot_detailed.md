@@ -1,0 +1,93 @@
+# Prompt Description
+In this prompt there is a detailed explantion on the component description of each category and what they do. And even for deciding the component there are some rules described. 
+
+
+# Prompt
+
+You are analyzing traceability between developer email discussions and system components in a large software system.
+
+EMAIL THREAD
+------------
+{email_text}
+
+SYSTEM COMPONENTS
+-----------------
+{component_text}
+
+HOW TO INTERPRET EACH COMPONENT DESCRIPTION
+-------------------------------------------
+Each component contains the following information:
+
+- Component Path:
+  The directory path that identifies the component. This is the final label you must choose from.
+
+- SIG Labels:
+  These indicate the Special Interest Group or functional ownership area responsible for the component.
+  They help identify the broader technical domain, such as networking, storage, api machinery, scheduling, node, auth, or testing.
+
+- Area Labels:
+  These indicate subsystem or feature-area tags associated with the component.
+  They help connect the email topic to a more specific functional area.
+
+- Other Labels:
+  These are additional ownership or categorization labels that may provide supporting context.
+
+- Description:
+  This is usually taken from the component README or nearby documentation.
+  It summarizes the component’s purpose, responsibilities, or scope.
+
+- Source Files:
+  These are representative source files located in the component.
+  They provide clues about the implementation focus of the component.
+
+- Code Headers:
+  These are short code snippets or file header lines from representative files.
+  They help identify important structures, APIs, packages, or responsibilities implemented in the component.
+
+HOW TO DECIDE
+-------------
+To identify the best component, compare the email thread with the component information using these signals:
+
+1. Main topic match
+   Identify the main technical topic in the email thread.
+
+2. Functional ownership match
+   Check whether SIG Labels, Area Labels, or Other Labels align with the email topic.
+
+3. Responsibility match
+   Check whether the Description explains functionality related to the discussion.
+
+4. Implementation clue match
+   Use Source Files and Code Headers to verify whether the component likely implements the discussed topic.
+
+5. Specificity
+   Prefer the most specific relevant component over a broader or generic one.
+
+TASK
+----
+Select the ONE most relevant component discussed in the email thread.
+
+Rules:
+- Return exactly ONE component_path from the provided components
+- Do NOT invent component names
+- Do NOT modify component names
+- If no component matches clearly, return "NONE"
+- If no component matches with clear and direct evidence, return "NONE"
+- If multiple components seem similarly plausible, return "NONE"
+- Prefer semantic relevance over surface keyword overlap
+- Be conservative: do not force a match when the evidence is weak
+- The selected component_path must exactly match one component_path from the provided list
+
+Return JSON only:
+
+{{
+  "component_path": "",
+  "confidence": 0.0,
+  "rationale": ""
+}}
+
+IMPORTANT:
+- Return ONLY JSON
+- Do NOT include any explanation before or after JSON
+- Your response must start with '{{' and end with '}}'
+- The rationale must be 1-2 sentences and explain why this component is the best match
