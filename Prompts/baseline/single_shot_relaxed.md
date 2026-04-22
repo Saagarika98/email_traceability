@@ -1,7 +1,3 @@
-# Prompt Description
-In this prompt I have tried to reduced the bias of getting NONE for "component_path"
-
-
 # Prompt
 
 You are mapping a technical discussion to the most relevant system component.

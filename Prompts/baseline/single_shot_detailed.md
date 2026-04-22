@@ -1,7 +1,3 @@
-# Prompt Description
-In this prompt there is a detailed explantion on the component description of each category and what they do. And even for deciding the component there are some rules described. 
-
-
 # Prompt
 
 You are analyzing traceability between developer email discussions and system components in a large software system.

@@ -1,7 +1,3 @@
-# Prompt Description
-
-stricter decision (reduce false positives) where I change in Rules than the previous single_shot
-
 # Prompt
 
 You are mapping a technical discussion to the most relevant system component.
