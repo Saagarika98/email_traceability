@@ -1,10 +1,14 @@
-# Prompt
+# Prompt 
 
-You are analyzing traceability between developer email discussions and system components in a large software system.
+You are mapping a technical discussion to the most relevant system component.
 
-EMAIL THREAD
-------------
-{email_text}
+SUMMARY
+-------
+{summary}
+
+CLUES
+-----
+{clues}
 
 SYSTEM COMPONENTS
 -----------------
@@ -67,11 +71,7 @@ Rules:
 - Return exactly ONE component_path from the provided components
 - Do NOT invent component names
 - Do NOT modify component names
-- If no component matches clearly, return "NONE"
-- If no component matches with clear and direct evidence, return "NONE"
-- If multiple components seem similarly plausible, return "NONE"
 - Prefer semantic relevance over surface keyword overlap
-- Be conservative: do not force a match when the evidence is weak
 - The selected component_path must exactly match one component_path from the provided list
 
 Return JSON only:
