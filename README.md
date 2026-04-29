@@ -30,16 +30,16 @@ In these prompts the whole component is given as a whole and asked LLM to select
 
 | Condition | Input Case | Prompt |
 |----------|-------------|--------|
-| C1-P0 | Full Email | Control |
-| C1-P1 | Full Email | No interpretation |
-| C1-P2 | Full Email | No decision rules |
-| C1-P3 | Full Email | No NONE rule |
-| C1-P4 | Full Email | + Evidence extraction |
-| C2-P0 | Summary+Clues | Control |
-| C2-P1 | Summary+Clues | No interpretation |
-| C2-P2 | Summary+Clues | No decision rules |
-| C2-P3 | Summary+Clues | No NONE rule |
-| C2-P4 | Summary+Clues | + Evidence extraction |
+| P0 | case1 | Control |
+| P1 | case1 | No interpretation |
+| P2 | case1 | No decision rules |
+| P3 | case1 | No NONE rule |
+| P4 | case1 | + Evidence extraction |
+| P0 | case2 | Control |
+| P1 | case2 | No interpretation |
+| P2 | case2 | No decision rules |
+| P3 | case2 | No NONE rule |
+| P4 | case2 | + Evidence extraction |
 
 
 ## Task
