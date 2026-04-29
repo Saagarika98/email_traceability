@@ -1,0 +1,170 @@
+[
+  {
+    "thread_id": "0uBKzd5yrF0",
+    "is_debt": true,
+    "component_path": "cluster",
+    "notes": ""
+  },
+  {
+    "thread_id": "5cYBMrHdfjE",
+    "is_debt": true,
+    "component_path": "staging/src/k8s.io/kube-scheduler/extender",
+    "notes": "Also relevant: staging/src/k8s.io/kube-scheduler/extender"
+  },
+  {
+    "thread_id": "7nfG0fKcKEU",
+    "is_debt": true,
+    "component_path": "",
+    "notes": "Could be all possible paths as they talk about security issues"
+  },
+  {
+    "thread_id": "FEH9suc_UGo",
+    "is_debt": true,
+    "component_path": "NONE",
+    "notes": ""
+  },
+  {
+    "thread_id": "I-kGxTUVzVs",
+    "is_debt": true,
+    "component_path": "cmd",
+    "notes": ""
+  },
+  {
+    "thread_id": "IjIKrFh3QVA",
+    "is_debt": true,
+    "component_path": "test/instrumentation/testdata",
+    "notes": "Also relevant: test/conformance/testdata"
+  },
+  {
+    "thread_id": "K-9KA_wMbmk",
+    "is_debt": true,
+    "component_path": "pkg/apis",
+    "notes": ""
+  },
+  {
+    "thread_id": "OOaKkcOKJVs",
+    "is_debt": true,
+    "component_path": "NONE",
+    "notes": ""
+  },
+  {
+    "thread_id": "Th50olAPPhU",
+    "is_debt": true,
+    "component_path": "staging/src/k8s.io/kubectl/pkg/config",
+    "notes": ""
+  },
+  {
+    "thread_id": "YI-lOna93RY",
+    "is_debt": true,
+    "component_path": "NONE",
+    "notes": ""
+  },
+  {
+    "thread_id": "YZYSRIpnXmw",
+    "is_debt": true,
+    "component_path": "NONE",
+    "notes": ""
+  },
+  {
+    "thread_id": "a-0wx-MeWVo",
+    "is_debt": true,
+    "component_path": "",
+    "notes": "Could be all possible paths as they talk about security issues"
+  },
+  {
+    "thread_id": "a2oZ9md7Z8g",
+    "is_debt": true,
+    "component_path": "staging/src/k8s.io/apiserver/pkg/apis",
+    "notes": ""
+  },
+  {
+    "thread_id": "bP2_ijXddMs",
+    "is_debt": true,
+    "component_path": "cluster",
+    "notes": ""
+  },
+  {
+    "thread_id": "cILhJ_mQe9I",
+    "is_debt": true,
+    "component_path": "cluster",
+    "notes": ""
+  },
+  {
+    "thread_id": "d29C-A5XLc0",
+    "is_debt": true,
+    "component_path": "NONE",
+    "notes": ""
+  },
+  {
+    "thread_id": "gUBV1b-EnHg",
+    "is_debt": true,
+    "component_path": "plugin",
+    "notes": ""
+  },
+  {
+    "thread_id": "jmxp5ceglnY",
+    "is_debt": true,
+    "component_path": "staging/src/k8s.io/apimachinery/pkg/apis",
+    "notes": ""
+  },
+  {
+    "thread_id": "jtvEpud5sDc",
+    "is_debt": true,
+    "component_path": "pkg/api",
+    "notes": ""
+  },
+  {
+    "thread_id": "kd97N7k4Eeo",
+    "is_debt": true,
+    "component_path": "staging/src/k8s.io/component-base/featuregate",
+    "notes": "Also relevant: staging/src/k8s.io/component-base/config"
+  },
+  {
+    "thread_id": "lfC3v83VwYs",
+    "is_debt": true,
+    "component_path": "NONE",
+    "notes": ""
+  },
+  {
+    "thread_id": "rO-cUwJMixQ",
+    "is_debt": true,
+    "component_path": "cluster",
+    "notes": ""
+  },
+  {
+    "thread_id": "tJ5Y_av0Bao",
+    "is_debt": true,
+    "component_path": "NONE",
+    "notes": ""
+  },
+  {
+    "thread_id": "u_rsLcOrvOs",
+    "is_debt": true,
+    "component_path": "NONE",
+    "notes": ""
+  },
+  {
+    "thread_id": "vtXxsprhyog",
+    "is_debt": true,
+    "component_path": "NONE",
+    "notes": ""
+  },
+  {
+    "thread_id": "xhQuwdd2Smw",
+    "is_debt": true,
+    "component_path": "staging/src/k8s.io/component-base/logs/api",
+    "notes": ""
+  },
+  {
+    "thread_id": "xnEG7_5WZJI",
+    "is_debt": true,
+    "component_path": "cluster",
+    "notes": "Also relevant: test/images"
+  },
+  {
+    "thread_id": "y-eWzF-bmX8",
+    "is_debt": true,
+    "component_path": "staging/src/k8s.io/api",
+    "notes": "Also relevant: pkg/apis"
+  }
+]
