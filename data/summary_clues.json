@@ -1,0 +1,405 @@
+[
+  {
+    "thread_id": "7nfG0fKcKEU",
+    "summary": "The email thread discusses recent Kubernetes releases, highlighting security fixes and P0 issues discovered during testing, particularly in GCE. There is a concern about the frequency of releases and the need to improve testing infrastructure to catch critical bugs before minor releases. The upcoming v1.3.3 release is delayed due to a testing flake, and v1.3.4 aims to address cherry pick backlogs and storage issues.",
+    "clues": [
+      "Kubernetes",
+      "GCE",
+      "v1.2.6",
+      "v1.3.1",
+      "v1.3.2",
+      "v1.3.3",
+      "v1.3.4",
+      "security issue",
+      "P0 issue",
+      "cherry pick backlog",
+      "test infrastructure"
+    ]
+  },
+  {
+    "thread_id": "FEH9suc_UGo",
+    "summary": "The Kubernetes community faced issues with git fetch errors affecting pull requests for the kubernetes/kubernetes repository. The GitHub team indicated that the current workflow is not recommended due to potential failures in post-receive hooks. A workaround suggested is to push another commit to re-trigger these hooks. The issue was escalated, and after updates to the prow's clone_refs init container, no further reports of the issue have been received in the last week, leading to the conclusion that the issue is resolved.",
+    "clues": [
+      "kubernetes/kubernetes",
+      "git fetch errors",
+      "post-receive hooks",
+      "prow's clone_refs init container",
+      "high latency replica",
+      "GitHub team"
+    ]
+  },
+  {
+    "thread_id": "I-kGxTUVzVs",
+    "summary": "The discussion revolves around the behavior of the Kubernetes REST API when deleting a replication controller. It questions whether deleting a replication controller will also terminate its associated replicas or if a separate DELETE pod API call is necessary. Additionally, there is a concern about a defect where containers remain in a stopped state and are not cleaned up by Kubernetes after the pod is deleted. The existence of an open work item on Git regarding this issue is also inquired about.",
+    "clues": [
+      "Kubernetes",
+      "REST API",
+      "replication controller",
+      "DELETE replication controller",
+      "DELETE pod API",
+      "containers",
+      "stopped status",
+      "work item",
+      "Git"
+    ]
+  },
+  {
+    "thread_id": "IjIKrFh3QVA",
+    "summary": "The submit queue was stopped due to issues with the Andrew Moreno tests and a bug in the branch cut script that affected version tagging, resulting in tests being stuck on the 1.3 beta build. A fix was merged to address the tagging issue on the master branch.",
+    "clues": [
+      "submit-queue",
+      "Andrew Moreno tests",
+      "versionize docs script",
+      "1.4 alpha",
+      "1.3 beta",
+      "tag bumping",
+      "master branch"
+    ]
+  },
+  {
+    "thread_id": "K-9KA_wMbmk",
+    "summary": "The discussion revolves around challenges in routing and discovery for custom TCP-based Hot Rod protocol used in Infinispan, a NoSQL data grid. Key issues include the difficulty of managing external IPs for a large number of virtual IPs, the need for enhancements to Services and Ingresses, and potential solutions involving PetSets. There are concerns about the limitations of current ingress support for SNI to individual hostnames and the need for better discovery mechanisms from the outside world. Tracy Page offers to contribute designs and test cases despite not being a Go developer.",
+    "clues": [
+      "Infinispan",
+      "Hot Rod protocol",
+      "PetSets",
+      "Services",
+      "Ingresses",
+      "SNI",
+      "external IP management",
+      "HTTP/2 client",
+      "PING operation"
+    ]
+  },
+  {
+    "thread_id": "OOaKkcOKJVs",
+    "summary": "The discussion highlights the need for better management and documentation of bots within the community, particularly regarding how to disable them when they cause issues. It emphasizes the importance of having a clear, documented process for shutting down problematic bots, the potential need for a staffed pager rotation for critical bots, and the requirement for bots to support basic commands like 'help' and 'leave'. This indicates a gap in current bot management practices and the potential for future incidents if not addressed.",
+    "clues": [
+      "k8s-ci-robot",
+      "test-infra oncall",
+      "sig-testing",
+      "make-it-stop page",
+      "opt-in for bots",
+      "user profile on github/slack"
+    ]
+  },
+  {
+    "thread_id": "Th50olAPPhU",
+    "summary": "The discussion revolves around the lack of a dedicated UI for Kubernetes federation, with participants noting that while any Kubernetes UI should theoretically work with the Federation API, not all API calls are supported. There are concerns about the need for customization of existing UIs to support federation features like creating Federated Services and Deployments. Weave Scope is mentioned as a potential tool, but it does not directly bind to federation APIs. Other UI tools exist that can read from multiple clusters but lack tight integration with federation, highlighting a gap in functionality and testing for federation support.",
+    "clues": [
+      "Kubernetes federation",
+      "Federation API",
+      "Weave Scope",
+      "Federated Service",
+      "Federated Deployment",
+      "ClusterRegistry",
+      "kubeconfig"
+    ]
+  },
+  {
+    "thread_id": "YZYSRIpnXmw",
+    "summary": "The discussion revolves around the limitations of Kubernetes regarding shared mount namespaces for containers within a pod, particularly for FUSE functionality. While shared volumes can be used, they do not meet the specific use case where one process sets up a FUSE mount for another process in a different container. Current implementations do not support shared mount namespaces, although mount propagation is planned for future support. The conversation highlights a workaround using Docker's shared mount propagation feature, but it is not yet implemented in Kubernetes. There are concerns about the portability of Kubernetes with respect to runtime-specific options.",
+    "clues": [
+      "shared mount namespaces",
+      "mount propagation",
+      "FUSE",
+      "Kubernetes",
+      "Docker",
+      "rkt",
+      "shared volumes"
+    ]
+  },
+  {
+    "thread_id": "a-0wx-MeWVo",
+    "summary": "The discussion revolves around the notification process for security vulnerabilities in Kubernetes, specifically regarding the timing and optional nature of notifying the Private Distributors List. Concerns were raised about the order of disclosures, with the current process allowing public announcements before private notifications, which may lead to confusion and potential security risks. The document outlining this process is deemed outdated and requires updates to reflect current practices, particularly regarding the need for a private release build/staging process to mitigate gaps in notification timing.",
+    "clues": [
+      "Kubernetes",
+      "Private Distributors List",
+      "CVE",
+      "Fix Lead",
+      "Fix Team",
+      "security release process",
+      "public pre-release notification",
+      "release artifacts"
+    ]
+  },
+  {
+    "thread_id": "a2oZ9md7Z8g",
+    "summary": "The merge queue for PRs with the 1.3 milestone has been optimized for throughput and issue filing. There are ongoing concerns about the speed of unit tests and flake percentages, with a goal of achieving around 50 PRs per day. Suggestions include splitting into more repositories and implementing a batched merging strategy. There is a need for metrics to prevent recurring issues and a roll-up document for managing separate repos effectively.",
+    "clues": [
+      "merge queue",
+      "1.3 milestone",
+      "throughput optimization",
+      "issue filing",
+      "unit tests",
+      "flake percentage",
+      "batched merging strategy",
+      "separate repos",
+      "metrics",
+      "roll-up issue"
+    ]
+  },
+  {
+    "thread_id": "bP2_ijXddMs",
+    "summary": "The discussion revolves around connecting a Kubernetes cluster to on-premise services via OpenVPN. Judith Elliott initiates the conversation about migrating infrastructure and ensuring communication between Kubernetes node workers and on-premise services. Aleks suggests using OpenVPN to connect both networks, highlighting the complexity of the setup. Later, Martín shares a workaround by adding a non-Kubernetes node as a gateway for the on-premise network, which resolves the issue. King'ori Maina seeks help with client-go's exec functionality, facing issues with output duplication and blank lines. Michael Buchanan provides insights on TTY settings and output handling, leading to a successful resolution by putting the terminal into raw mode. The conversation highlights potential configuration problems and the need for careful handling of TTY settings in Kubernetes exec commands.",
+    "clues": [
+      "Kubernetes",
+      "OpenVPN",
+      "client-go",
+      "exec",
+      "TTY",
+      "cloud-init",
+      "gateway",
+      "on-premise services"
+    ]
+  },
+  {
+    "thread_id": "cILhJ_mQe9I",
+    "summary": "The discussion revolves around simplifying Kubernetes cluster deployment, with concerns about the complexity of existing tools like BOSH. Participants express the need for a more user-friendly deployment solution that avoids the pitfalls of BOSH, such as its difficulty in use and maintenance, especially for non-vSphere users. There is a consensus on the importance of flexibility, composability, and a fully automated reference stack for beginners. Tools like Ansible and Packer are suggested for creating minimal deployment footprints, while concerns about the potential for technical debt from overly complex solutions are raised. The need for documentation of existing tools and their limitations is emphasized.",
+    "clues": [
+      "Kubernetes",
+      "BOSH",
+      "Ansible",
+      "Packer",
+      "Terraform",
+      "Chef",
+      "Puppet",
+      "Salt",
+      "Vagrant",
+      "deployment automation",
+      "cloud provider",
+      "OS distribution",
+      "blue-green deploys",
+      "docker images",
+      "Travis Hamilton agent",
+      "cf.yml"
+    ]
+  },
+  {
+    "thread_id": "d29C-A5XLc0",
+    "summary": "The discussion focused on networking, specifically around the minimal viable API referenced as #5069. Amy Cooper indicated that this API is subject to change and proposed creating a mailing list for further discussions on networking due to the interest from multiple parties. There were also issues with participants joining the meeting, indicating potential configuration problems with the meeting link.",
+    "clues": [
+      "#5069",
+      "minimal viable API",
+      "networking",
+      "mailing list"
+    ]
+  },
+  {
+    "thread_id": "gUBV1b-EnHg",
+    "summary": "The Kubernetes v0.18.0 release will disallow '.' characters in namespace names, changing the format to DNS labels instead of DNS subdomains. This change is due to the Kubernetes DNS module's inability to handle subdomain formats, which may lead to potential breakage for clusters not adhering to the new naming convention. Users are advised to update existing namespace names before upgrading to avoid issues.",
+    "clues": [
+      "Kubernetes",
+      "namespace",
+      "DNS labels",
+      "DNS subdomains",
+      "api-server",
+      "v1beta1",
+      "v1beta2",
+      "v1beta3",
+      "issue #6666",
+      "issue #8010"
+    ]
+  },
+  {
+    "thread_id": "jmxp5ceglnY",
+    "summary": "The upgrade to Go 1.12 has introduced a performance/scalability regression in Kubernetes, specifically increasing API call latencies. The issue is believed to be linked to a commit in Go that removed the fast path for small page-level memory allocations, resulting in the need to acquire a lock. Efforts are ongoing to confirm the cause and explore mitigation or fixes.",
+    "clues": [
+      "Kubernetes",
+      "Go 1.12",
+      "API call latencies",
+      "commit 07e738ec32025da458cdf968e4f991972471e6e9",
+      "memory allocations",
+      "lock acquisition"
+    ]
+  },
+  {
+    "thread_id": "jtvEpud5sDc",
+    "summary": "The discussion addresses the issue of DNS records for statefulset pods using headless services, which are populated based on readinessProbe statuses. It highlights a limitation where inter-pod communication is hindered for pods that are not yet ready, as their DNS records are not populated. This raises concerns about the necessity of using readiness probes for headless services in statefulsets, especially when pods need to communicate to achieve readiness. The conversation suggests a potential workaround by referencing the 'publishNotReadyAddresses' feature.",
+    "clues": [
+      "statefulset",
+      "headless services",
+      "readinessProbe",
+      "publishNotReadyAddresses",
+      "inter-pod communication"
+    ]
+  },
+  {
+    "thread_id": "kd97N7k4Eeo",
+    "summary": "The discussion revolves around the use of ThirdParty Resources (TPRs) in Kubernetes, highlighting their importance in building microservices and managing configurations. While TPRs provide a RESTful interface and facilitate declarative configurations, there are significant concerns regarding their immaturity and the presence of bugs, particularly with the 'apply' functionality. Users express a desire for improvements and fixes to enhance the usability and stability of TPRs, as they are critical for integrating Kubernetes into their infrastructure.",
+    "clues": [
+      "ThirdParty Resources",
+      "TPR",
+      "Kubernetes",
+      "RESTful interface",
+      "etcd",
+      "apply",
+      "SSL certificate",
+      "microservice",
+      "apiserver",
+      "configuration management"
+    ]
+  },
+  {
+    "thread_id": "lfC3v83VwYs",
+    "summary": "The Kubernetes v1.10.0 release includes various updates and fixes, with notable changes in the Node subsystem, including Dynamic Kubelet Configuration and improvements to the CRI. There are known issues with subPath module and hostPath volumes, as well as deprecated features such as the use of insecure HTTP ports and certain flags in the Kubelet's configuration. Workarounds for these issues are mentioned, indicating ongoing maintenance and architectural concerns.",
+    "clues": [
+      "Dynamic Kubelet Configuration",
+      "Kubelet",
+      "subPath",
+      "hostPath volumes",
+      "insecure HTTP port",
+      "Kubelet's --config file",
+      "Device Plugins",
+      "PodSecurityPolicy API",
+      "kube-controller-manager",
+      "kube-apiserver"
+    ]
+  },
+  {
+    "thread_id": "rO-cUwJMixQ",
+    "summary": "\"ssh-keyfile\" and \"ssh-user\" command line parameters in the Kubernetes API Server are being considered for removal, indicating a shift away from SSH tunneling in favor of VPN-based solutions. This raises concerns about the future maintenance and support of the SSH tunneling feature, as it may lead to technical debt if not properly addressed.",
+    "clues": [
+      "Kubernetes API Server",
+      "ssh-keyfile",
+      "ssh-user",
+      "SSH tunneling",
+      "GCE",
+      "VPN"
+    ]
+  },
+  {
+    "thread_id": "tJ5Y_av0Bao",
+    "summary": "The discussion focuses on proposed improvements to the issue triage process in the Kubernetes repository, including the introduction of two new labels ('needs-triage' and 'triage/ready'), the removal of certain unused triage labels, and the clarification of responsibilities for applying these labels. There are concerns about the current usage of existing triage labels and the need for SIG members to manage them appropriately. The KEP is set to be merged provisionally, with plans to implement these changes in the Kubernetes 1.19 cycle.",
+    "clues": [
+      "kubernetes/kubernetes",
+      "needs-triage",
+      "triage/ready",
+      "triage/duplicate",
+      "triage/needs-information",
+      "triage/not-reproducible",
+      "triage/support",
+      "triage/unresolved",
+      "SIG Release",
+      "Contributor Experience",
+      "milestone-maintainers",
+      "KEP",
+      "enhancement issue"
+    ]
+  },
+  {
+    "thread_id": "u_rsLcOrvOs",
+    "summary": "The discussion revolves around the proposal to add version information when deprecating features in the codebase. This is aimed at improving clarity for users and contributors regarding when features were deprecated and when they might be removed. Roger Campbell suggests filing an issue to remove deprecated features in a specific version and documenting the feature number near the entry point of the deprecated feature.",
+    "clues": [
+      "deprecation",
+      "versioning",
+      "feature number",
+      "flag registration",
+      "milestone"
+    ]
+  },
+  {
+    "thread_id": "vtXxsprhyog",
+    "summary": "The discussion revolves around using nginx as a proxy for kubelet to apiserver, addressing issues with TIMEOUT for WATCH connections. The user has configured nginx to proxy requests but encounters unexpected watch closures and connection issues. Melanie Thompson suggests avoiding nginx for this purpose, recommending a layer 4 proxy instead, and highlights potential issues with HTTP/1.1 and certificate handling. The user seeks a solution to ensure client connections close when upstream connections close and is open to using a functioning hostname for kubelet.",
+    "clues": [
+      "nginx",
+      "kubelet",
+      "apiserver",
+      "TIMEOUT",
+      "WATCH",
+      "HTTP/1.1",
+      "layer 4 proxy",
+      "client connection",
+      "upstream connection",
+      "certificates"
+    ]
+  },
+  {
+    "thread_id": "xhQuwdd2Smw",
+    "summary": "The discussion centers around the deprecation of the dynamic log sanitization feature (KEP-1753) in Kubernetes, which was introduced as an experimental alpha feature in version 1.20. Due to concerns about its support burden and the blocking of new logging improvements, the SIG Instrumentation proposes its removal in version 1.24. The alternative implementation of static analysis for logging secrets has graduated to stable in version 1.23, addressing the original concerns. The removal is planned to be merged early in the development cycle to allow for feedback.",
+    "clues": [
+      "dynamic log sanitization",
+      "KEP-1753",
+      "SIG Instrumentation",
+      "static analysis",
+      "logging improvements",
+      "1.20",
+      "1.23",
+      "1.24"
+    ]
+  },
+  {
+    "thread_id": "xnEG7_5WZJI",
+    "summary": "The Kubernetes community is implementing remote build execution (RBE) for distributed Bazel builds and caching, specifically for the kubernetes/test-infra and kubernetes/kubernetes repositories. This change aims to reduce build times and better distribute compute load. Developers are encouraged to report any errors related to RBE and to reach out for assistance in migrating their repositories to use RBE with prow. The transition is ongoing, and there are no expected impacts on developers using prow presubmits or Robert Howard.",
+    "clues": [
+      "prow",
+      "Robert Howard",
+      "remote build execution",
+      "RBE",
+      "kubernetes/test-infra",
+      "kubernetes/kubernetes",
+      "pull-kubernetes-bazel-test",
+      "pull-kubernetes-bazel-build",
+      "distributed caching",
+      "bazel"
+    ]
+  },
+  {
+    "thread_id": "y-eWzF-bmX8",
+    "summary": "The CI signal report for Kubernetes 1.16 highlights several issues related to misconfigurations in CI jobs, particularly concerning the referencing of release channels. Key problems include test failures due to deprecated API groups and RBAC permission issues. Notable failures involve kube-proxy, scheduler tests, CSI volume snapshot tests, and node resize tests. There are ongoing concerns about flaky tests and aggressive timeouts during kubeadm cluster upgrades. The report also mentions new issues related to advanced audit testing in SIG Auth.",
+    "clues": [
+      "kube-proxy",
+      "scheduler",
+      "CSI Volumes",
+      "RBAC permissions",
+      "extensions/v1beta1",
+      "kubeadm",
+      "sig-auth"
+    ]
+  },
+  {
+    "thread_id": "0uBKzd5yrF0",
+    "summary": "The Kubernetes Emulation Version (KEP-4330) introduced in release 1.31 enhances upgrade safety by allowing cluster administrators to emulate capabilities of prior Kubernetes versions. This requires tracking feature changes in the versioned_specs list and updating the versioned_feature_list.yaml file. Alpha features can be removed anytime, while Beta+ features have new removal requirements, necessitating a feature gate setting. Testing must account for feature enablement/disablement even after deprecation. There are specific guidelines for preserving behavior in code changes, particularly for API changes and admin-facing modifications.",
+    "clues": [
+      "Kubernetes",
+      "Emulation Version",
+      "KEP-4330",
+      "versioned_specs",
+      "versioned_feature_list.yaml",
+      "feature gate",
+      "Alpha features",
+      "Beta+ features",
+      "API changes",
+      "cmd flag"
+    ]
+  },
+  {
+    "thread_id": "5cYBMrHdfjE",
+    "summary": "The discussion focuses on improving logging in Kubernetes by transitioning to structured logging, which allows for easier parsing of log entries. A proposal for 'contextual logging' is introduced, enabling function callers to control logging details, such as verbosity and log entry prefixes. This change aims to address current limitations in the kube-scheduler log output and reduce the hard dependency on the klog package. The proposal seeks feedback before moving forward, highlighting the impact on the entire Kubernetes code base and associated projects.",
+    "clues": [
+      "klog package",
+      "structured logging",
+      "contextual logging",
+      "kube-scheduler",
+      "SIG Instrumentation",
+      "SIG Scheduling",
+      "KEP"
+    ]
+  },
+  {
+    "thread_id": "YI-lOna93RY",
+    "summary": "The discussion revolves around the formation of a new working group focused on Node Lifecycle management in Kubernetes. Key concerns include the decoupling of node lifecycle from other system components, which has led to various challenges such as managing configurations of containerd, kernel settings, and software upgrades. Participants emphasize the need for declarative, atomic, and rollback-able node management solutions. There are also mentions of existing workarounds like daemonsets and the need for better coordination with SIGs, particularly SIG Cloud Provider and SIG Storage, to address issues like volume teardown and node drain/eviction implementations.",
+    "clues": [
+      "Node Lifecycle",
+      "Kubernetes",
+      "daemonsets",
+      "containerd",
+      "sysctl",
+      "SIG Cloud Provider",
+      "SIG Storage",
+      "node drain",
+      "node eviction",
+      "volume teardown"
+    ]
+  }
+]
