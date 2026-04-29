@@ -61,3 +61,28 @@ All prompts enforce strict JSON output:
   "rationale": ""
 }
 ```
+
+## Evaluation
+
+Results are analyzed at different levels.
+
+### 1. Prompt Variant Comparison (Within-Case)
+
+Prompt variants (P0–P4) are compared within each input case to assess prompt sensitivity.
+
+Metrics:
+- Prediction agreement across prompts
+- Pairwise agreement between prompts
+- Number of unique predictions per thread
+- Frequency of `NONE` predictions
+- Identification of unstable threads (unique predictions on each email_thread)
+
+
+### 2. Case Comparison (Case 1 vs Case 2)
+
+Predictions from direct full-thread mapping and sequential summary+clues mapping are compared for the same prompt variants.
+
+Metrics:
+- Cross-case agreement rate
+- Cross-case prediction differences
+- `NONE` prediction frequency by case
