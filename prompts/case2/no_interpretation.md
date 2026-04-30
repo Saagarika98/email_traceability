@@ -16,7 +16,7 @@ SYSTEM COMPONENTS
 
 HOW TO DECIDE
 -------------
-To identify the best component, compare the email thread with the component information using these signals:
+To identify the best component, compare the summary and clues with the component information using these signals:
 
 1. Main topic match
    Identify the main technical topic in the email thread.
@@ -33,9 +33,15 @@ To identify the best component, compare the email thread with the component info
 5. Specificity
    Prefer the most specific relevant component over a broader or generic one.
 
+6. Before selecting a component, ask: "Is there clear evidence that this discussion belongs to a specific component?"
+      If the answer is NO, return "NONE".
+
 TASK
 ----
-Select the ONE most relevant component discussed in the email thread.
+First determine whether the discussion clearly maps to a specific component.
+
+- If YES → select the ONE most relevant component_path
+- If NO → return "NONE"
 
 Rules:
 - Return exactly ONE component_path from the provided components

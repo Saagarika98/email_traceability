@@ -61,7 +61,10 @@ To identify the best component, compare the email thread with the component info
 
 TASK
 ----
-Select the ONE most relevant component discussed in the email thread.
+First determine whether the discussion clearly maps to a specific component.
+
+- If YES → select the ONE most relevant component_path
+- If NO → return "NONE"
 
 Rules:
 - Return exactly ONE component_path from the provided components
