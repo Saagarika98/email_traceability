@@ -1,17 +1,23 @@
 # Email -> Code Traceability 
-This project explores how LLMs can map developer email discussions to relevant system components. 
+The goal of this study is to evaluate how effectively LLMs can map developer email threads to relevant source-code components using different input representations. This project explores how LLMs can map developer email discussions to relevant system components. 
 
 The approach uses:
-- Developer email threads
-- Structured component descriptions
-- Prompt-based LLM reasoning
+- `input`: developer email threads
+- `output`: source-code component
+- `method`: LLM
+- `comparison`: different input representations
+
+# Research Questions
+- RQ1: How accurately can LLMs map developer email threads to relevant source-code components? (exact match accuracy, relaxed match accuracy, wrong predictions, `NONE` predictions)
+- RQ2: How does the input representation of developer email threads affect LLM-based component prediction? (full email thread, summary + clues, structured extraction)
+- RQ3: What types of errors occur when LLMs incorrectly map email threads to source-code components? (parent component, child component, sibling component, wrong subsystem, `NONE`, keyword-based wrong match)
 
 # Input Cases
 
 | Case | Input Representation | Description |
 |------|----------------------|-------------|
-| case1 | Full Email Thread | Entire email thread is provided as model input |
-| case2 | Summary + Clues | Condensed summary and extracted clues are provided as model input |
+| case1 | Full Email Thread (Full subject, messages, replies, and discussion content) | Entire email thread is provided as model input |
+| case2 | Summary (Short technical summary of the email thread) + Clues (Important terms, APIs, errors, files, subsystems, labels, or concepts) | Condensed summary and extracted clues are provided as model input |
 
 
 ## Prompt Variants
