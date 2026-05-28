@@ -34,21 +34,24 @@ To identify the best component, compare the email thread with the component info
 
 TASK
 ----
-First determine whether the discussion clearly maps to a specific component.
+First determine whether the discussion clearly maps to a specific component. Use SIG labels as an initial ownership/domain signal. If a SIG label clearly matches the email topic, first focus on components under that SIG. Then choose the final component_path using the description, area labels, source files, and code headers. Do not select a component based only on SIG label if several components share the same SIG.
 
-- If YES → select the ONE most relevant component_path
-- If NO → return "NONE"
+- If the email discussion is mainly about process, coordination, meetings, releases, CI/testing workflow, general project management, or broad project-level concerns, return "NONE" unless there is clear evidence linking it to a specific component.
+- If one component is clearly the best match based on the component metadata, select its component_path.
+- If no component is sufficiently supported by the email discussion, return "NONE".
+
 
 Rules:
 - Return exactly ONE component_path from the provided components
 - Do NOT invent component names
 - Do NOT modify component names
-- If no component matches clearly, return "NONE"
-- If no component matches with clear and direct evidence, return "NONE"
-- If multiple components seem similarly plausible, return "NONE"
+- Return exactly ONE value: one component_path from the provided components, or "NONE" if no component is sufficiently supported.
+- If multiple components seem equally plausible and there is no clear best match, return "NONE".
+- Do not choose the closest-looking component only because of keyword overlap.
+- Return "NONE" when the evidence is broad, weak, or not tied to a specific component's responsibility, source files, or code headers.
 - Prefer semantic relevance over surface keyword overlap
 - Be conservative: do not force a match when the evidence is weak
-- The selected component_path must exactly match one component_path from the provided list
+- If a component is selected, the selected component_path must exactly match one component_path from the provided list. Otherwise, return "NONE".
 
 Return JSON only:
 
