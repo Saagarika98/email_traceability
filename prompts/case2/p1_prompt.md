@@ -14,27 +14,9 @@ SYSTEM COMPONENTS
 -----------------
 {component_text}
 
-HOW TO DECIDE
--------------
-To identify the best component, compare the summary and clues with the component information using these signals:
-
-1. Main topic match
-   Identify the main technical topic in the email thread.
-
-2. Functional ownership match
-   Check whether SIG Labels, Area Labels, or Other Labels align with the email topic.
-
-3. Responsibility match
-   Check whether the Description explains functionality related to the discussion.
-
-4. Implementation clue match
-   Use Source Files and Code Headers to verify whether the component likely implements the discussed topic.
-
-5. Specificity
-   Prefer the most specific relevant component over a broader or generic one.
-
-6. Before selecting a component, ask: "Is there clear evidence that this discussion belongs to a specific component?"
-      If the answer is NO, return "NONE".
+NOTE
+----
+The summary provides the main technical context of the discussion. The clues highlight important terms (e.g., subsystems, APIs, configs, errors) that help identify the responsible component.
 
 TASK
 ----
@@ -44,19 +26,28 @@ First determine whether the discussion clearly maps to a specific component. Use
 - If one component is clearly the best match based on the component metadata, select its component_path.
 - If no component is sufficiently supported by the email discussion, return "NONE".
 
+HOW TO DECIDE
+-------------
+Use this process to select the best component:
 
-Rules:
-- Return exactly ONE component_path from the provided components
-- Do NOT invent component names
-- Do NOT modify component names
-- Return exactly ONE value: one component_path from the provided components, or "NONE" if no component is sufficiently supported.
-- If multiple components seem equally plausible and there is no clear best match, return "NONE".
-- Do not choose the closest-looking component only because of keyword overlap.
-- Return "NONE" when the evidence is broad, weak, or not tied to a specific component's responsibility, source files, or code headers.
-- Prefer semantic relevance over surface keyword overlap
-- Be conservative: do not force a match when the evidence is weak
-- If a component is selected, the selected component_path must exactly match one component_path from the provided list. Otherwise, return "NONE".
+1. Identify the main technical topic in the email thread.
+2. Use SIG, area, and other labels to find potentially relevant components.
+3. Check whether the component description matches the discussed functionality.
+4. Use source files and code headers as implementation evidence.
+5. Prefer the most specific relevant component.
+6. Select a component only when there is clear evidence linking the discussion to that component.
 
+SELECTION RULES
+---------------
+- Return exactly one value: either one component_path from the provided components, or "NONE".
+- Do not invent or modify component paths.
+- Do not select a component based only on broad SIG labels or keyword overlap.
+- If multiple components are equally plausible, return "NONE".
+- If the discussion is mainly about process, coordination, meetings, releases, CI/testing workflow, or broad project management, return "NONE" unless clearly linked to a specific component.
+- Be conservative. If the evidence is weak, return "NONE".
+
+OUTPUT FORMAT
+-------------
 Return JSON only:
 
 {{
@@ -65,8 +56,10 @@ Return JSON only:
   "rationale": ""
 }}
 
-IMPORTANT:
+OUTPUT REQUIREMENTS
+---------
 - Return ONLY JSON
 - Do NOT include any explanation before or after JSON
 - Your response must start with '{{' and end with '}}'
+- The confidence must be between 0.0 and 1.0.
 - The rationale must be 1-2 sentences and explain why this component is the best match
