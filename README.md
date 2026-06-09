@@ -29,7 +29,7 @@ In these prompts the whole component is given as a whole and asked LLM to select
 | P0 | ✓ | ✓ | ✓ | ✗ | Full Detailed prompt |
 | P1 | ✗ | ✓ | ✓ | ✗ | Remove interpretation section |
 | P2 | ✓ | ✗ | ✓ | ✗ | Remove decision rules section |
-| P3 | ✓ | ✓ | ✓ | ✓ | Add evidence extraction section |
+| P3 | ✓ | ✓ | ✓ | ✓ | Add Ambiguity Check section |
 
 ## Experimental Conditions
 
@@ -38,13 +38,11 @@ In these prompts the whole component is given as a whole and asked LLM to select
 | P0 | case1 | Control |
 | P1 | case1 | No interpretation |
 | P2 | case1 | No decision rules |
-| P3 | case1 | No NONE rule |
-| P4 | case1 | + Evidence extraction |
+| P3 | case1 | Ambiguity Check |
 | P0 | case2 | Control |
 | P1 | case2 | No interpretation |
 | P2 | case2 | No decision rules |
-| P3 | case2 | No NONE rule |
-| P4 | case2 | + Evidence extraction |
+| P3 | case2 | Ambiguity Check |
 
 
 ## Task
