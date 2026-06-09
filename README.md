@@ -29,8 +29,7 @@ In these prompts the whole component is given as a whole and asked LLM to select
 | P0 | ✓ | ✓ | ✓ | ✗ | Full Detailed prompt |
 | P1 | ✗ | ✓ | ✓ | ✗ | Remove interpretation section |
 | P2 | ✓ | ✗ | ✓ | ✗ | Remove decision rules section |
-| P3 | ✓ | ✓ | ✗ | ✗ | Remove NONE rule |
-| P4 | ✓ | ✓ | ✓ | ✓ | Add evidence extraction section |
+| P3 | ✓ | ✓ | ✓ | ✓ | Add evidence extraction section |
 
 ## Experimental Conditions
 
